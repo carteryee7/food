@@ -50,3 +50,30 @@ class Ranker():
     def __str__(self):
         return "\n".join(str(food) for food in self.foods)
     
+
+def main():
+    ranker = Ranker()
+    
+    pizza = Food("Pizza", 8.5, "Main Course", "Italian")
+    sushi = Food("Sushi", 9.0, "Main Course", "Japanese")
+    burger = Food("Burger", 7.5, "Main Course", "American")
+    ice_cream = Food("Ice Cream", 8.0, "Dessert", "Various")
+    
+    ranker.add_food(pizza)
+    ranker.add_food(sushi)
+    ranker.add_food(burger)
+    ranker.add_food(ice_cream)
+    
+    print("All Foods:")
+    print(ranker)
+    
+    print("\nTop 2 Foods:")
+    for food in ranker.get_top_n(2):
+        print(food)
+    
+    print("\nWorst Food:")
+    print(ranker.get_worst_food())
+    
+    print("\nJapanese Foods:")
+    for food in ranker.filter_by_cuisine("Japanese"):
+        print(food)
