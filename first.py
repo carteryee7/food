@@ -14,6 +14,6 @@ class Food():
         if 0 <= value <= 10:
             self._rating = value
         else:
-            raise ValueError("Rating must be between 0 and 5")
-    
+            raise ValueError("Rating must be between 0 and 10")
+        
     
