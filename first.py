@@ -15,5 +15,8 @@ class Food():
             self._rating = value
         else:
             raise ValueError("Rating must be between 0 and 10")
+    
+    def __str__(self):
+        return f"{self.name} ({self.cuisine} {self.type}) - Rating: {self.rating}/10"
         
     
