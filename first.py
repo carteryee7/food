@@ -26,6 +26,9 @@ class Ranker():
     
     def add_food(self, food):
         self.foods.append(food)
+
+    def remove_food(self, food_name):
+        self.foods = [food for food in self.foods if food.name != food_name]
     
     def sort_by_rating(self):
         return sorted(self.foods, key=lambda x: x.rating, reverse=True)
