@@ -18,5 +18,18 @@ class Food():
     
     def __str__(self):
         return f"{self.name} ({self.cuisine} {self.type}) - Rating: {self.rating}/10"
-        
+    
+
+class Ranker():
+    def __init__(self):
+        self.foods = []
+    
+    def add_food(self, food):
+        self.foods.append(food)
+    
+    def get_top_rated(self, n=5):
+        return sorted(self.foods, key=lambda x: x.rating, reverse=True)[:n]
+    
+    def __str__(self):
+        return "\n".join(str(food) for food in self.foods)
     
