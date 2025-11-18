@@ -27,8 +27,12 @@ class Ranker():
     def add_food(self, food):
         self.foods.append(food)
     
-    def get_top_rated(self, n=5):
-        return sorted(self.foods, key=lambda x: x.rating, reverse=True)[:n]
+    def sort_by_rating(self):
+        return sorted(self.foods, key=lambda x: x.rating, reverse=True)
+    
+    def get_top_n(self, n):
+        sorted_foods = self.sort_by_rating()
+        return sorted_foods[:n]
     
     def __str__(self):
         return "\n".join(str(food) for food in self.foods)
