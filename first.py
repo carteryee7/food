@@ -33,6 +33,11 @@ class Ranker():
     def sort_by_rating(self):
         return sorted(self.foods, key=lambda x: x.rating, reverse=True)
     
+    def filter_by_cuisine(self, cuisine):
+        return [food for food in self.foods if food.cuisine.lower() == cuisine.lower()]
+    
+    def fi
+    
     def get_top_n(self, n):
         sorted_foods = self.sort_by_rating()
         return sorted_foods[:n]
