@@ -36,7 +36,8 @@ class Ranker():
     def filter_by_cuisine(self, cuisine):
         return [food for food in self.foods if food.cuisine.lower() == cuisine.lower()]
     
-    def fi
+    def filter_by_type(self, type):
+        return [food for food in self.foods if food.type.lower() == type.lower()]
     
     def get_top_n(self, n):
         sorted_foods = self.sort_by_rating()
