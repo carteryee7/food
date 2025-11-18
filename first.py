@@ -37,6 +37,10 @@ class Ranker():
         sorted_foods = self.sort_by_rating()
         return sorted_foods[:n]
     
+    def get_worst_food(self):
+        sorted_foods = self.sort_by_rating()
+        return sorted_foods[-1] if sorted_foods else None
+    
     def __str__(self):
         return "\n".join(str(food) for food in self.foods)
     
